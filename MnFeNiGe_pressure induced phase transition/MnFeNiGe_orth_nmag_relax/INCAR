@@ -1,0 +1,28 @@
+ SYSTEM =MnFeNiGe_nmag_orth
+
+INCAR-basic
+   ISTART	= 1	
+   ENCUT  = 450 eV
+   NELM = 200
+   NELMIN= 5
+   LREAL = .FALSE
+   LCHARG = .TRUE
+   PREC = Accurate
+   EDIFF  = 1E-5
+   NPAR = 4
+   NBANDS = 360
+   
+   ISPIN = 1    ## For magnetism set
+#  MAGMOM = 3*1
+#  LORBIT = 11
+
+Ionic Relaxation
+   ISMEAR = 1
+   SIGMA = 0.2 
+   NSW    = 400    
+   IBRION = 2
+   ISIF   = 7            
+   PSTRESS= 0
+
+
+# Use 'qvasp -cif' to transer format (VESTA or MS)

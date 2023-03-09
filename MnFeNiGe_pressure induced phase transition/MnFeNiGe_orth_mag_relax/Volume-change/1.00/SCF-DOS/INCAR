@@ -1,0 +1,36 @@
+SYSTEM =MnFeNiGe_mag_DOS
+
+INCAR-basic
+   ISTART	= 1	
+   ENCUT  = 450 eV
+   LREAL  = .FALSE
+   PREC   = Accurate 
+   EDIFF  = 1E-6
+   NPAR   = 4
+   NBANDS = 360
+  #ADDGRID = .FALSE  #Default_FALSE(increase grid helps GGA convergence) 
+   
+   ISPIN = 2    ## For magnetism set
+   MAGMOM = 15*5 16*5 16*0 5
+   LORBIT = 10
+   
+Electronic Relaxation
+   ISMEAR = -5
+   SIGMA  = 0.05
+   NELM   = 60
+   NELMIN = 5
+   
+Density of states
+   NSW    = 0    
+   IBRION = -1  # no update.
+   NEDOS  = 1501
+   ICHARG = 11
+   EMIN   = -10.00
+   EMAX   = 15.00
+   
+   LWAVE   = .FALSE  ##write WAVECAR or not
+   LCHARG  = .TRUE  ##write CHGCAR or not
+   LELF    = T
+
+   
+

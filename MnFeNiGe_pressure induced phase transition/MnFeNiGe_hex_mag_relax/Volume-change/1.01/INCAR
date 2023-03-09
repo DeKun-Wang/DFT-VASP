@@ -1,0 +1,30 @@
+SYSTEM =MnFeNiGe_mag_hex-scf
+
+INCAR-basic
+   ISTART	= 1		
+   ENCUT  = 450 eV
+   LREAL  = .FALSE
+   PREC   = Accurate 
+   EDIFF  = 1E-6
+   NPAR   = 4
+   NBANDS = 360
+  #ADDGRID = .FALSE  #Default_FALSE(increase grid helps GGA convergence) 
+   
+   ISPIN  = 2    ## For magnetism set
+   MAGMOM = 16*5 16*0 15*5 5
+   LORBIT = 11
+
+Electronic Relaxation
+   ISMEAR = 1
+   SIGMA  = 0.2
+   NELM   = 60
+   NELMIN = 5
+   
+Ionic Relaxation
+   NSW    = 0    
+   IBRION = -1
+   ISIF   = 6            
+   ISYM	  = 2
+   
+   LWAVE   = .FALSE  ##write WAVECAR or not
+   LCHARG  = .TRUE ##write CHGCAR or not

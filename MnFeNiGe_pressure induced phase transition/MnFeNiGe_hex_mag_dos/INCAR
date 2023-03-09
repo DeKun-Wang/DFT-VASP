@@ -1,0 +1,28 @@
+ SYSTEM =  MnFeNiGe_hex_mag_dos
+
+INCAR-basic
+   PREC = Accurate 
+   ENCUT  = 450 eV
+   NELM = 200
+   NELMIN = 5
+   LREAL = .FALSE
+   EDIFF  = 1E-5
+   ISMEAR = 1
+   SIGMA = 0.1
+   NPAR = 4     ## Important to reduce calculate time, equal sqrt(cpu cores)
+   NBANDS = 360
+   
+   ISPIN = 2    ## For magnetism set
+   MAGMOM = 16*5 16*0 15*5 5
+   LORBIT = 11
+   
+Density of states
+   ICHARG = 2
+   NSW    = 0
+   IBRION = -1  # no update.
+   NEDOS = 3001
+
+   LELF = T
+
+# Improve the density of k-mesh by qvasp -k 0.1
+# Use 'qvasp -dosd' to get the results (OriginPro)
